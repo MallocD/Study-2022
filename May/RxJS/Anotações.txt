@@ -1,0 +1,18 @@
+share() -> Compartilhar estado entre observables
+
+Promises:
+
+-Único valor
+-Excussão imediata(Eager)
+-Compartilhada(multicast)
+-Assíncrona
+-Não cancelável
+
+
+Observables:
+
+-Multíplos valores
+-Excussão sob demanda(lazy)
+-Compartilhada ou não(multicast/unicast)
+-Síncrona e ou assíncrona
+-Cancelável

@@ -1,0 +1,36 @@
+
+{
+  "compilerOptions": {
+      "declaration": true,
+      "module": "es2020",
+      "target": "es2017",
+      "baseUrl": ".",
+      "stripInternal": true,
+      "emitDecoratorMetadata": false,
+      "experimentalDecorators": true,
+      "moduleResolution": "node",
+      "outDir": "../build",
+      "lib": [
+          "es2020",
+          "dom"
+      ],
+      "skipLibCheck": true,
+      "types": [],
+      "paths": {
+        "criando-librarys/*" :["src/app/components/*/public-api.ts"]
+      }
+  },
+  "angularCompilerOptions": {
+      "annotateForClosureCompiler": false,
+      "strictMetadataEmit": true,
+      "skipTemplateCodegen": true,
+      "enableI18nLegacyMessageIdFormat": false,
+      "strictInjectionParameters": true,
+      "strictInputAccessModifiers": true,
+      "flatModuleOutFile": "criando-librarys.js",
+      "flatModuleId": "criando-librarys"
+  },
+  "files": [
+      "./public-api.ts"
+  ]
+}
