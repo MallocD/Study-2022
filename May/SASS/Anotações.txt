@@ -1,0 +1,127 @@
+1° Clicar no Watch SASS para que ele possa realizar a conversão de SASS para CSS para que o Browser possa rodar.
+2°
+
+É possível aninhar tags html e classe css uma dentro da outra ->
+Ex : 
+body {
+
+color : #ffffff
+
+h1 {
+background-color : #fff11
+}
+
+}
+
+E será convertido dessa maneira para css :
+
+body h1 { }
+
+------------------------------------------------------------------------------------------------------------------------------
+Declarar váriaveis->
+
+$nome-da-variável : value
+
+h1{color : $nome-da-variavel;}	
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Maps (Key : values) como no Java -> utilizada para organizar valores de uma determinada categoria, quando possui diversos valores
+
+Forma de declarar o map :
+
+$font-weight: (
+    "regular" : 400,
+    "medium" : 500,
+    "bold" : 700
+);
+
+h1 {
+font-weight: map-get($font-weight, $key:bold); // Modo como é chamado na propriedade da meta-tag
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Criar arquivos SCSS parciais que iniciam com _ Ex : _variables.scss -> Por conta do underscore não será gerado um arquivo convertido para css,
+esses arquivos parciais tem como objetivo dividir o arquivos SCSS em partes para ficar um código mais limpo.
+
+Para realizar a importação dos arquivos parciais basta fazer o seguinte:
+
+@import './nome-arquivo-parcial' // Perceba que não é necessário o uso da extensão SCSS do arquivo.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Criar arquivos reset.scss -> É importante sempre criar um css reset para que não haja quebra de formatação em diferentes navegadores, sempre 
+lembrar de criar esse arquivo no começo para evitar dor de cabeças futuras. Sempre bom utilizar em todos os projetos.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Functions no SASS : Utilizado para criar functions no SCSS
+
+@function //Anotação para iniciar a function
+
+@return // Retorna o resultado da function
+
+Ex: Quando passado o Key que é a chave do $font-weigt ele retorna o map get com o valor da chave ->
+
+@function weight ($key){
+    @return map-get($font-weight, $key);
+}
+
+Para utilizar basta passar como o valor da propriedade o nome da function e o parametro :
+
+h1 {
+        color: $primary-color;
+        font-family: family(default)
+   }
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Mixin no SASS : Utilizada para quando há muita repetição de códigos com mesmas propriedades e valores
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+Para realizar a chamada do mixin basta adicionar dentro do bloco da tag que deseja utilizar :
+
+.container{@include flexCenter()}
+
+É possível também adicionar propriedades dentro do Mixin com valores variáveis por exemplo :
+
+@mixin flexCenter($direction) { // É como passar um parametro para um constructor do Java
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction : $direction;
+}
+
+
+E para utilizar e mudar a variável basta quando for adicionar o @include , adicionar o valor como argumento, da seguinte maneira :
+
+@include flexCenter(valor-variavel);
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Métodos lighten e darken :
+
+lighten -> Serve para clarear uma cor em porcentagem 
+
+Ex -> background : lighten(#000, 25%);
+
+darken -> Serve para escurecer uma cor em porcentagem como o lighten 
+
+Ex -> background : darken(#FFF, 25%);
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+

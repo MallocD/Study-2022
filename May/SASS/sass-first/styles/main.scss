@@ -1,0 +1,49 @@
+@import "./variables";
+@import "./reset";
+
+/*Function para retornar valor do map de weight da fonte*/
+@function weight ($key){
+    @return map-get($font-weight, $key);
+}
+
+/*Function para retornar valor do map da family da fonte*/
+@function family ($key){
+    @return map-get($font-family, $key);
+}
+
+/*Function para retornar valor do map da cor da fonte*/
+@function color ($key){
+    @return map-get($colors, $key);
+}
+
+/* Mixin para centrarlizar items  */
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+body {
+    background-color: color(primary);
+    .container{
+        @include flexCenter(column); //Passando argumento do Mixin
+
+        h1 {
+            color: $primary-color;
+            font-weight: weight(medium); /* Chamando a function e passando o valor */
+            font-family: family(default)
+        }
+        a {
+            color:$primary-color;
+            font-family: family(default)
+        }
+        p{
+            color: color(secondary);
+            font-family: family(default)
+            
+        }
+     
+    }
+       
+}

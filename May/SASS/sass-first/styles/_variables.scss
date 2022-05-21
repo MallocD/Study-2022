@@ -1,0 +1,21 @@
+/*Declarando as variáveis*/
+$primary-color : rgb(255, 255, 255);
+
+$colors : (
+    'primary' : rgb(32, 46, 121),
+    'secondary' : rgb(155, 151, 131),
+    'danger' : red
+);
+
+/*Maps (Key-Value)*/
+$font-weight: (
+    "regular" : 400,
+    "medium" : 500,
+    "bold" : 700
+);
+
+$font-family : (
+    "default" : Arial
+
+)
+
