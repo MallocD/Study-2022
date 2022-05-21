@@ -1,0 +1,65 @@
+@import "./variables";
+@import "./reset";
+@import "./mixins";
+
+section {
+    @include flexCenter();
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    font-family: 'Press Start 2P',cursive;
+    @media (max-width:$mobileMax){
+        height: auto;
+        padding: 0;
+    }
+
+    &.javascript {
+        @include theme(rgb(49, 62, 247),rgb(187, 187, 149)) /* Utilizadno o mixin */
+    }
+    &.html {
+        @include theme(rgb(245, 234, 133),rgb(139, 139, 121))
+    }
+   
+    .container{
+        width: 80%;
+        @media (max-width: $mobileMax){
+            width: calc(100%-40px);
+            padding: 80px 0 100px;;
+        }
+
+        h1{
+            width: 100%;
+            font-size: 2.4rem;
+            text-align: left;
+            padding: 24px 0;
+            font-weight: weight(bold);
+            color: colors(primary);
+
+        }
+        p{
+            line-height: 1.5rem;
+            @media (max-width: $mobileMax){
+                text-align: justify;
+            }
+        }
+        .actions {
+            @include flexCenter(row);
+            margin-top: 40px;
+            .btn {
+                margin: 0 auto;
+                padding: 8px;
+                border-radius: 8px;
+                font-size: 1.5rem;
+                text-decoration: none;
+                color: inherit; /* Herdar a cor da classe pai */
+                font-weight: weight(re);
+
+                &:hover{
+                    color: rgb(255, 251, 0);
+                }
+            }
+        }
+
+    }
+}
+

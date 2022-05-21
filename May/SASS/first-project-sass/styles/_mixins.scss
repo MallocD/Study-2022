@@ -1,0 +1,23 @@
+@mixin flexCenter($direction : column) { /*É possível pasasr um valor padrão*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+/* Para definir temas*/
+@mixin theme($bg,$text){
+    background: $bg;
+    color: $text;
+}
+
+@function weight($weight-name){
+    @return map-get($font-weight, $weight-name)
+}
+
+
+@function colors($color-name){
+    @return map-get($colors, $color-name)
+}
+
+
