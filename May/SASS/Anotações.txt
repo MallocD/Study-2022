@@ -76,6 +76,8 @@ h1 {
         font-family: family(default)
    }
 
+É possível utilizar if na function
+
 
 ------------------------------------------------------------------------------------------------------------------------------
 
@@ -105,6 +107,8 @@ E para utilizar e mudar a variável basta quando for adicionar o @include , adic
 
 @include flexCenter(valor-variavel);
 
+É possível ter um valor padrão, exemplo :  @mixin flexCenter($direction : column) {} / E caso o valor não seja adicionado será por padrão o column
+
 
 ------------------------------------------------------------------------------------------------------------------------------
 
@@ -121,7 +125,26 @@ Ex -> background : darken(#FFF, 25%);
 
 
 --------------------------------------------------------------------------------------------------------------------------
+ Herdando Propriedades :
 
+É possível herdar com @extends caso não seja filho do container, ou que não esteja acoplado dentro de um componente.
 
+@extends nome-da-classe
+
+E & caso seja filho :
+
+class-father{
+ 
+&.javascript {
+        background-color: burlywood;
+        color: black;
+    }
+
+}
+--------------------------------------------------------------------------------------------------------------------------
+É possível importar fontes 
+
+-------------------------------------------------
+Utilizando @media querys
 
 
